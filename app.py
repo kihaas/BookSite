@@ -22,7 +22,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Подключение роутеров
+# Подключение роутеров С ПРЕФИКСОМ http://127.0.0.1:8000/api/v1/books
 app.include_router(books_router, prefix="/api/v1")
 
 # Точка входа для запуска сервера
