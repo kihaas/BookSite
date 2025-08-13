@@ -1,16 +1,11 @@
-from typing import Generator
-from sqlalchemy.orm import Session
-from fastapi import Depends
-
-from database.session import SessionLocal
+# depends.py
+from database.session import get_db
+from repositories.book import BookRepository
 from services.book import BookService
-
-def get_db() -> Generator:
-    db = SessionLocal()
-    try:
-        yield db
-    finally:
-        db.close()
+from fastapi import Depends
+from sqlalchemy.orm import Session
 
 def get_book_service(db: Session = Depends(get_db)) -> BookService:
-    return BookService(db)
+    """DI для сервиса книг"""
+    repository = BookRepository(db)
+    return BookService(repository)

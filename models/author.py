@@ -1,4 +1,5 @@
-from sqlalchemy import Column, Integer, String, Date, ForeignKey
+# models/author.py
+from sqlalchemy import Column, Integer, String, Date
 from sqlalchemy.orm import relationship
 from database.session import Base
 
@@ -11,4 +12,5 @@ class Author(Base):
     date_of_birth = Column(Date)
     biography = Column(String(1000), nullable=True)
 
+    # Связь с книгами
     books = relationship("Book", back_populates="author")

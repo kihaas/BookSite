@@ -1,46 +1,42 @@
+# schemas/book.py
 from datetime import date
-from typing import Optional
-from pydantic import BaseModel, Field, validator
+from pydantic import BaseModel
 
+# ====== Схемы для Авторов ======
 
 class AuthorBase(BaseModel):
-    first_name: str = Field(..., max_length=100, example="John")
-    last_name: str = Field(..., max_length=100, example="Doe")
-    date_of_birth: date = Field(..., example="1970-01-01")
-    biography: Optional[str] = Field(None, max_length=1000, example="Famous author")
-
+    first_name: str
+    last_name: str
+    date_of_birth: date
+    biography: str | None = None
 
 class AuthorCreate(AuthorBase):
+    """Схема для создания автора"""
     pass
 
-
-class Author(AuthorBase):
+class AuthorResponse(AuthorBase):
+    """Схема для ответа (с ID)"""
     id: int
 
     class Config:
-        orm_mode = True  # Для работы с ORM (например, SQLAlchemy)
+        from_attributes = True  # Pydantic v2: замена orm_mode
 
+
+# ====== Схемы для Книг ======
 
 class BookBase(BaseModel):
-    title: str = Field(..., max_length=200, example="The Great Book")
-    annotation: Optional[str] = Field(None, max_length=1000)
-    date_published: date = Field(..., example="2020-01-01")
-    author_id: int = Field(..., example=1)
-
-    @validator('date_published')
-    def date_published_must_be_past(cls, v):
-        if v > date.today():
-            raise ValueError('Date published cannot be in the future')
-        return v
-
+    title: str
+    annotation: str | None = None
+    date_published: date
 
 class BookCreate(BookBase):
-    pass
+    """Схема для создания книги"""
+    author_id: int  # ID автора, к которому привязывается книга
 
-
-class Book(BookBase):
+class BookResponse(BookBase):
+    """Схема для ответа (с ID и автором)"""
     id: int
-    author: Author  # Вложенная модель автора
+    author: AuthorResponse
 
     class Config:
-        orm_mode = True
+        from_attributes = True  # Pydantic v2: замена orm_mode
