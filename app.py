@@ -1,37 +1,24 @@
+# app.py
 import uvicorn
 from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
-from routing.book import router as books_router
+from routing.book import router as books_routing
+from database.session import init_db
 
-# Инициализация приложения FastAPI с настройками для документации
-app = FastAPI(
-    title="Bookstore API",
-    description="API для управления книгами и авторами",
-    version="1.0.0",
-    openapi_url="/api/openapi.json",
-    docs_url="/api/docs",
-    redoc_url="/api/redoc",
-)
+# 👉 Импортируем модели, чтобы SQLAlchemy их знал до create_all()
+from models import author, book
 
-# Настройка CORS (Cross-Origin Resource Sharing) для безопасности
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],  # В продакшене нужно указать конкретные домены
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
+app = FastAPI(openapi_url="/core/openapi.json", docs_url="/core/docs")
 
-# Подключение роутеров С ПРЕФИКСОМ http://127.0.0.1:8000/api/v1/books
-app.include_router(books_router, prefix="/api/v1")
+# Создаём таблицы в базе
+init_db()
 
-# Точка входа для запуска сервера
+# Подключаем роуты
+app.include_router(books_routing)
+
+@app.get("/")
+def root():
+    return {"message": "Сервер работает! Откройте /core/docs чтобы посмотреть API"}
+
+
 if __name__ == "__main__":
-    # В продакшене лучше использовать конфигурацию из переменных окружения
-    uvicorn.run(
-        "app:app",
-        host="127.0.0.1",
-        port=8000,
-        reload=True,  # Только для разработки!
-        workers=4,    # Для продакшена нужно подбирать оптимальное количество
-    )
+    uvicorn.run("app:app",reload=True)
