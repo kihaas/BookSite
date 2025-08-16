@@ -51,8 +51,8 @@ pip install fastapi uvicorn[standard] pydantic
 
 # Start the application
 uvicorn main:app --reload
----
 ```
+---
 
 <img width="1599" height="890" alt="image" src="https://github.com/user-attachments/assets/d06a4ab9-723d-49d7-9601-c7866000e24b" />
 
