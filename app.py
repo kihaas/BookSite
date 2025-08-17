@@ -9,7 +9,7 @@ from models import author, book
 
 app = FastAPI(openapi_url="/core/openapi.json", docs_url="/core/docs")
 
-# Создаём таблицы в базе
+# Создаём тaблицы в бaзеуууууу
 init_db()
 
 # Подключаем роутыыыыыыы
