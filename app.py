@@ -12,7 +12,7 @@ app = FastAPI(openapi_url="/core/openapi.json", docs_url="/core/docs")
 # Создаём таблицы в базе
 init_db()
 
-# Подключаем роуты
+# Подключаем роутыыыыыыы
 app.include_router(books_routing)
 
 @app.get("/")
