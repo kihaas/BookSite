@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Книги — BookSite</title>
+  <!-- базовые стили -->
+  <link rel="stylesheet" href="{{ url_for('static', path='/styles.css') }}">
+</head>
+<body>
+  <!-- Шапка -->
+  <header class="site-header">
+    <div class="container">
+      <h1 class="site-title">📚 BookSite</h1>
+      <nav class="site-nav">
+        <a href="/books" class="nav-link is-active">Книги</a>
+        <a href="#" class="nav-link">О проекте</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Поисковая строка -->
+  <section class="toolbar container">
+    <input id="search" class="input" type="search" placeholder="Искать по названию или автору…" />
+    <button id="addDemo" class="btn">+ Добавить демо-книгу</button>
+  </section>
+
+  <!-- Список карточек -->
+  <main class="container">
+    <div id="books" class="grid"></div>
+
+    <!-- Блок ошибок/состояний -->
+    <p id="status" class="status" aria-live="polite"></p>
+  </main>
+
+  <!-- Подвал -->
+  <footer class="site-footer">
+    <div class="container">Сделано тобой на FastAPI + ванильный JS</div>
+  </footer>
+
+  <!-- Скрипт в самом конце, чтобы DOM уже был готов -->
+  <script src="{{ url_for('static', path='/main.js') }}"></script>
+</body>
+</html>
