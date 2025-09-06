@@ -11,7 +11,7 @@ class AuthorBase(BaseModel):
     biography: str | None = None
 
 class AuthorCreate(AuthorBase):
-    """Схема для создания автора"""
+    """Схема для создания автoра"""
     pass
 
 class AuthorResponse(AuthorBase):
