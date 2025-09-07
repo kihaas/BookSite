@@ -8,7 +8,7 @@ from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
-# 👉 Импортируем модели, чтобы SQLAlchemy их знал до create_all()
+# 👉 Импортируeм модели, чтобы SQLAlchemy их знал до create_all()
 from models import author, book
 
 app = FastAPI(openapi_url="/core/openapi.json", docs_url="/core/docs")
@@ -16,7 +16,7 @@ app = FastAPI(openapi_url="/core/openapi.json", docs_url="/core/docs")
 # Создаём таблицы в базе
 init_db()
 
-# Подключаем роyты
+# Подключаeм роyты
 app.include_router(books_routing)
 
 # 📁 подключаем папку со статикой (css, js, картинки)
