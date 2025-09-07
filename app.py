@@ -8,7 +8,7 @@ from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
-# 👉 Импортируeм модели, чтобы SQLAlchemy их знал до create_all()
+# 👉 Импортируeм модeли, чтобы SQLAlchemy их знал до create_all()
 from models import author, book
 
 app = FastAPI(openapi_url="/core/openapi.json", docs_url="/core/docs")
