@@ -28,7 +28,7 @@ templates = Jinja2Templates(directory="frontend/templates")
 # 👇 CORS (нужен, если фронт будет запускаться отдельно, например с Live Server)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # для обучения можно поставить "*"
+    allow_origins=["*"],  # для обучeния можно поставить "*"
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
