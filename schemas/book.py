@@ -2,7 +2,7 @@
 from datetime import date
 from pydantic import BaseModel
 
-# ====== Схемы для Авторов ======
+# ====== Схемы для Авторoв ======
 
 class AuthorBase(BaseModel):
     first_name: str
@@ -11,7 +11,7 @@ class AuthorBase(BaseModel):
     biography: str | None = None
 
 class AuthorCreate(AuthorBase):
-    """Схема для создания автора"""
+    """Схема для создания автoра"""
     pass
 
 class AuthorResponse(AuthorBase):
@@ -31,7 +31,7 @@ class BookBase(BaseModel):
 
 class BookCreate(BookBase):
     """Схема для создания книги"""
-    author_id: int  # ID автора, к которому привязывается книга
+    author_id: int  # ID автoра, к которому привязывается книга
 
 class BookResponse(BookBase):
     """Схема для ответа (с ID и автором)"""

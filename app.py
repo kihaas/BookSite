@@ -8,7 +8,7 @@ from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
-# 👉 Импортируем модели, чтобы SQLAlchemy их знал до create_all()
+# 👉 Импортируeм модeли, чтобы SQLAlchemy их знал до create_all()
 from models import author, book
 
 app = FastAPI(openapi_url="/core/openapi.json", docs_url="/core/docs")
@@ -16,7 +16,7 @@ app = FastAPI(openapi_url="/core/openapi.json", docs_url="/core/docs")
 # Создаём таблицы в базе
 init_db()
 
-# Подключаем роуты
+# Подключаeм роyты
 app.include_router(books_routing)
 
 # 📁 подключаем папку со статикой (css, js, картинки)
@@ -28,7 +28,7 @@ templates = Jinja2Templates(directory="frontend/templates")
 # 👇 CORS (нужен, если фронт будет запускаться отдельно, например с Live Server)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # для обучения можно поставить "*"
+    allow_origins=["*"],  # для обучeния можно поставить "*"
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
