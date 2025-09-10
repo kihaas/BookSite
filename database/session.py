@@ -6,7 +6,7 @@ import logging
 
 logger = logging.getLogger(__name__)
 
-# Подключение к SQLite (можно заменить на PostgreSQL/MySQL)
+# Подключение к MySQL адо сделать (можно заменить на PostgreSQL/MySQL)
 SQLALCHEMY_DATABASE_URL = "sqlite:///./sql_app.db"
 
 # Создаем движок БД
