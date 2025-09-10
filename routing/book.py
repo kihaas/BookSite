@@ -9,7 +9,7 @@ router = APIRouter(prefix="/books", tags=["books"])
 
 @router.get("", response_model=List[BookResponse])
 async def get_all_books(book_service: BookService = Depends(get_book_service)):
-    """Получение всех книг"""
+    """Получение всех всех книг"""
     return book_service.get_books()
 
 @router.post("", response_model=BookResponse)
