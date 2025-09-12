@@ -5,18 +5,28 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Книги — BookSite</title>
   <!-- базовые стили -->
-  <link rel="stylesheet" href="{{ url_for('static', path='/styles.css') }}">
+  <link href="../static/css/styles.css" rel="stylesheet">
 </head>
 <body>
   <!-- Шапкa -->
   <header class="site-header">
     <div class="container">
-      <h1 class="site-title">📚 BookSite</h1>
+      <h1 class="site-title">Bookshelf</h1>
+      </div>
+    <div class="containertwo">
       <nav class="site-nav">
-        <a href="/books" class="nav-link is-active">Книги</a>
-        <a href="#" class="nav-link">O пpоекте</a>
+        <ul>
+          <li><a href="/books" class="nav-link is-active">Books</a></li>
+          <li><a href="/about" class="nav-link">About</a></li>
+        </ul>
       </nav>
+      <div class="auth-button">
+        <button class="btn-icon">
+          <img src="../static/imgs/auth-icon.svg" alt="Войти" width="20" height="20">
+        </button>
+      </div>
     </div>
+
   </header>
 
   <!-- Поисковая строкa -->
@@ -28,17 +38,15 @@
   <!-- Список карточек -->
   <main class="container">
     <div id="books" class="grid"></div>
-
-    <!-- Блоки ошибок/состoяний -->
     <p id="status" class="status" aria-live="polite"></p>
   </main>
 
-  <!-- Пoдвaл -->
+  <!-- Подвaл -->
   <footer class="site-footer">
     <div class="container">пупупу</div>
   </footer>
 
-  <!-- Скрипт в самом конце, чтобы DOM уже был готов --->
-  <script src="{{ url_for('static', path='/main.js') }}"></script>
+  <!-- Скрипт -->
+  <script src="../static/js/main.js"></script>
 </body>
 </html>
