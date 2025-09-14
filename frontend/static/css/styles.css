@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -11,17 +11,13 @@ body {
     background-color: #fff;
 }
 
-.container{
+.container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1rem;
 }
 
-.containertwo{
-
-}
-
-.site-header{
+.site-header {
     background-color: #ffffff;
     border-bottom: 1px solid #eaeaea;
     padding: 1rem 0;
@@ -31,41 +27,22 @@ body {
 }
 
 .site-header .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
 }
 
-.site-title{
-    font-size: 6rem;
+.site-title {
     font-weight: bold;
 }
 
 
-
 .site-nav ul {
-  display: flex; /* Главная магия: строим пункты в строку */
-  list-style: none; /* Убираем маркеры (точки) у списка */
-  margin: 0; /* Убираем стандартные отступы */
-  padding: 0; /* Убираем стандартные отступы */
-  gap: 1rem; /* Добавляем пространство между пунктами меню (опционально) */
 }
 
-.btn-icon {
-  background: none; /* Убираем фон */
-  border: none; /* Убираем рамку */
-  padding: 0.5rem; /* Добавляем область для нажатия */
-  cursor: pointer; /* Меняем курсор на "руку" при наведении */
-}
+
 
 .btn-icon {
-  width: 40px; /* Задаем размеры кнопки */
-  height: 40px;
-  background-repeat: no-repeat; /* Чтобы картинка не повторялась */
-  background-position: center; /* Размещаем картинку по центру */
-  background-color: transparent; /* Прозрачный фон */
-  border: 1px solid #ccc; /* Или border: none; */
-  border-radius: 4px; /* Закругление углов (опционально) */
-  cursor: pointer;
+    cursor: pointer;
 }
