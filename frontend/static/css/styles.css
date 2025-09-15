@@ -13,7 +13,8 @@ body {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: 0 20rem;
+    justify-content: space-around;
 }
 
 .site-header {
@@ -27,7 +28,7 @@ body {
 
 .site-header .container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     gap: 2rem;
 }
