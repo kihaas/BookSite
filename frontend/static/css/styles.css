@@ -5,16 +5,16 @@
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
     line-height: 1.6;
-    color: #333;
+    color: #0405B2;
     background-color: #fff;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: 0 20rem;
+    justify-content: space-around;
 }
 
 .site-header {
@@ -28,21 +28,21 @@ body {
 
 .site-header .container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     gap: 2rem;
 }
 
 .site-title {
-    font-weight: bold;
+    font-weight: 800;
+    font-family: 'MonumentExtended UltraBold', Arial, sans-serif;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1.2;
+    letter-spacing: 0.5px;
+    color: #0405B2;
 }
 
 
-.site-nav ul {
-}
 
 
-
-.btn-icon {
-    cursor: pointer;
-}
